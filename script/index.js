@@ -70,6 +70,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
     
 // Everything start here
 function displayData(data) {
+    console.log(data)
     if (!data) {
         console.log("No data to display");
         return;
@@ -133,7 +134,7 @@ function displayData(data) {
             detailRow.innerHTML = `
                 <td class="row-detail" colspan="10">
                     <button onclick="alert(${row.BADGE_NO})">View all data</button>
-                    <button onclick="alert('Delete clicked')">Education Background</button>
+                    <button onclick="education('${row.BADGE_NO}')">Education Background</button>
                     <button onclick="alert('View clicked')">trainings</button>
                     <button onclick="alert('View clicked')">Issued Fire arms</button>
                 </td>
@@ -147,5 +148,24 @@ function displayData(data) {
 }
 
 
+function education (badge_id){
+    document.getElementById('modal').style.display = "flex";
+    const container =  document.getElementById('modal-details');
+    const level = ["MASTER'S DEGREE","VOCATIONAL","SECONDARY", "PRIMARY" ];
+    document.getElementById('badge_id').innerHTML = `Badge No: ${badge_id}`
 
+    const data = level.map((e)=>`
+            <div style="margin: 15px 0;">
+                <h3>${e}</h3>
+                <p></p>
+            </div>
+        `).join('');
+
+    container.innerHTML = `
+    <header style="text-align: center; margin: 20px 0;">
+        <h3>Education Background</h3>
+    </header>
+    ${data}
+   `;
+}
 

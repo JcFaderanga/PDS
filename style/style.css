@@ -110,3 +110,39 @@
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   }
+
+.modal{
+position: absolute;
+display: none;
+justify-content: center;
+align-items: center;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-container{
+position: relative;
+width: 50%;
+background-color: white;    
+border-radius: 20px;
+padding: 2rem 3rem;
+}
+.modal-close{
+    position:absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+}
+.modal-profile{
+    
+}
+
+
